@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+def spleeter(filename, num_stems)
+  system("spleeter separate -i #{ENV["SAMPLES_STORAGE_PATH"]}/#{filename}.wav -p spleeter:#{num_stems}stems -o #{ENV["SAMPLES_STORAGE_PATH"]}")
+end
+
+
+def main()
+  spleeter(ARGV[0], ARGV[1])
+end
+
+main
